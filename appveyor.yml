@@ -21,7 +21,7 @@ after_build:
   # For once the build has completed
 clone_depth: 1
 test_script:
-  - cmd: dotnet test ./Simple.Api.Tests/Simple.Api.Tests.csproj
+  - cmd: dotnet test Simple.Api.Tests/Simple.Api.Tests.csproj
 on_finish :
   # any cleanup in here
 deploy: off
