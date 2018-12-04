@@ -1,6 +1,6 @@
 language: csharp
 solution: Simple.Api.sln
 mono: none
-dotnet: 2.2.100
+dotnet: 2.1
 script:
  - dotnet publish
