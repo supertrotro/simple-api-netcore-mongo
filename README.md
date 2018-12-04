@@ -2,5 +2,5 @@
 Simple API with .NET Core, MongoDB, Docker 
 
 CI Status
-https://ci.appveyor.com/api/projects/status/a7ps20uwgpsfdwj0/branch/master?svg=true
+[![Build status](https://ci.appveyor.com/api/projects/status/a7ps20uwgpsfdwj0?svg=true)](https://ci.appveyor.com/project/hoangnguyen1983/simple-api-netcore-mongo)
 
