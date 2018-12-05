@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Mongo2Go;
-using MongoDB.Driver;
-using Simple.Api.Repository;
 
 namespace Simple.Api.Tests.Repository
 {

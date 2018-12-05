@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Simple.Api.Repository;
 using Swashbuckle.AspNetCore.Swagger;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 namespace Simple.Api
 {
@@ -23,7 +22,7 @@ namespace Simple.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddApiVersioning();
+            //services.AddApiVersioning();
 
             // Register the Swagger service
             services.AddSwaggerGen(c =>
@@ -65,7 +64,7 @@ namespace Simple.Api
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint(@"/swagger/v1/swagger.json", "My Simple Data API v1");
+                c.SwaggerEndpoint(@"/swagger/v1/swagger.json", "Simple API v1");
             });
             app.UseMvc();
 
