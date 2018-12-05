@@ -1,0 +1,2 @@
+aws --profile tr-fr-nonprod iam --region us-east-1 create-role --role-name simpleEcsTaskExecutionRole --assume-role-policy-document file://task-execution-assume-role.json
+aws --profile tr-fr-nonprod iam --region us-east-1 attach-role-policy --role-name simpleEcsTaskExecutionRole --policy-arn arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
