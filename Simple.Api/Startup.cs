@@ -13,7 +13,6 @@ namespace Simple.Api
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
         }
 
         public IConfiguration Configuration { get; }
@@ -22,14 +21,11 @@ namespace Simple.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            //services.AddApiVersioning();
-
             // Register the Swagger service
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Simple Data API", Version = "v1" });
             });
-
             //MongoDb
             services.Configure<Settings>(
                 options =>
@@ -41,7 +37,6 @@ namespace Simple.Api
             // Add Database context
             services.AddTransient<IDbContext, DbContext>();
             services.AddTransient<IDataRepository, DataRepository>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,12 +46,6 @@ namespace Simple.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -67,8 +56,6 @@ namespace Simple.Api
                 c.SwaggerEndpoint(@"/swagger/v1/swagger.json", "Simple API v1");
             });
             app.UseMvc();
-
         }
-        
     }
 }
