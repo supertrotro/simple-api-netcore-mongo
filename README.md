@@ -67,3 +67,11 @@ And an example for two separate steps:
     COPY bin/Docker/publish/ /app/
     WORKDIR /app
     ENTRYPOINT ["dotnet", "Simple.Api.dll"]
+
+
+# Deploy to AWS
+For a solution multi-dockers, you can deploy as a [docker-compose](https://docs.docker.com/compose/aspnet-mssql-compose/) or separate into multi-deploy a single container.
+
+(To be continued)
+ 
+
