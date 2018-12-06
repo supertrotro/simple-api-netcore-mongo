@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Simple.Api.Repository;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
 
 namespace Simple.Api
 {
@@ -30,7 +31,7 @@ namespace Simple.Api
             services.Configure<Settings>(
                 options =>
                 {
-                    options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
+                    options.ConnectionString = Environment.GetEnvironmentVariable("DB_URI")?? Configuration.GetSection("MongoDb:ConnectionString").Value;
                     options.Database = Configuration.GetSection("MongoDb:Database").Value;
                     options.Collection = Configuration.GetSection("MongoDb:Collection").Value;
                 });

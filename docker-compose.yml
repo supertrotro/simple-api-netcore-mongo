@@ -2,15 +2,24 @@ version: "3"
 
 services:
   webapi:
-    image: simpleapi:latest
-    build:
-      context: Simple.Api
-      dockerfile: Dockerfile
+    image: 942358500564.dkr.ecr.us-east-1.amazonaws.com/simple-api:latest
     ports:
       - "80:80"
     depends_on:
       - mongodb
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: us-east-1
+        awslogs-group: /simpleapi/webapi
+        awslogs-stream-prefix: webapi
   mongodb:
-    image: mongo:latest
+    image: 942358500564.dkr.ecr.us-east-1.amazonaws.com/simple-api-mongodb:latest
     ports:
       - "27017:27017"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: us-east-1
+        awslogs-group: /simpleapi/database
+        awslogs-stream-prefix: mongodb
